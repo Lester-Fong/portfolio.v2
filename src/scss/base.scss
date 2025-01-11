@@ -1,0 +1,169 @@
+@use './variables' as vars;
+
+
+body {
+    background: #0a192f;
+    color: #f6f6f6;
+    font-family: vars.$font-sans;
+}
+
+ol {
+    list-style: none;
+    counter-reset: item;
+    padding-left: 0;
+    margin: 0;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    color: vars.$green;
+}
+
+.fng {
+    &-links {
+        display: flex;
+        align-items: center;
+        color: vars.$lightest-slate;
+        font-size: vars.$fz-xs;
+        font-family: vars.$font-mono;
+        font-weight: 500;
+        gap: 1.25rem;
+
+        a {
+            margin-right: 10px;
+        }
+    }
+
+    &-link {
+        counter-increment: item;
+
+        color: vars.$lightest-slate;
+        text-decoration: none;
+        transition: vars.$transition;
+        font-size: vars.$fz-xs;
+        font-family: vars.$font-mono;
+        font-weight: 500;
+
+        &:hover,
+        &:focus {
+            color: vars.$white;
+        }
+
+        &::before {
+            content: "0" counter(item) ".";
+            margin-right: 5px;
+            text-align: right;
+        }
+    }
+
+    &-resumeBtn {
+        color: vars.$green;
+        background-color: transparent;
+        border: 1px solid vars.$green;
+        border-radius: vars.$border-radius;
+        padding: 0.75rem 1rem;
+        font-family: vars.$font-mono;
+        line-height: 1;
+        text-decoration: none;
+        transition: vars.$transition;
+        margin-left: 15px;
+        font-size: vars.$fz-xs;
+
+        // default hover
+        &:hover {
+            outline: none;
+            box-shadow: 3px 3px 0 0 vars.$green;
+            transform: translate(-4px, -4px);
+        }
+    }
+
+    &-left-icons-list {
+        width: 40px;
+        position: fixed;
+        bottom: 0px;
+        left: 40px;
+        right: auto;
+        z-index: 10;
+        color: vars.$light-slate;
+
+        ul {
+            list-style: none;
+            padding: 0 .6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.45rem;
+            margin: 0;
+
+            li {
+                transition: vars.$transition;
+
+                &:hover,
+                &:focus {
+                    color: vars.$green;
+                    transform: translateY(-3px);
+                }
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 95px;
+                margin: 0px auto;
+                background-color: vars.$light-slate;
+            }
+        }
+    }
+
+    &-right-email {
+        width: 40px;
+        position: fixed;
+        bottom: 0px;
+        left: auto;
+        right: 40px;
+        z-index: 10;
+        color: vars.$light-slate;
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+
+            a {
+                margin: 20px auto;
+                padding: 10px;
+                font-family: vars.$font-mono;
+                font-size: vars.$fz-xs;
+                line-height: vars.$fz-lg;
+                letter-spacing: 0.1em;
+                -webkit-writing-mode: vertical-rl;
+                writing-mode: vertical-rl;
+                display: inline-block;
+                text-decoration: none;
+                text-decoration-skip-ink: auto;
+                color: inherit;
+                position: relative;
+                transition: vars.$transition;
+
+                &:hover,
+                &:focus {
+                    color: vars.$green;
+                    transform: translateY(-3px);
+                }
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 95px;
+                margin: 0px auto;
+                background-color: vars.$light-slate;
+            }
+        }
+    }
+}
