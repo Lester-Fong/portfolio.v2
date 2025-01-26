@@ -2,9 +2,19 @@
 
 
 body {
-    background: #0a192f;
-    color: #f6f6f6;
+    background: vars.$navy;
+    // color: #f6f6f6;
     font-family: vars.$font-sans;
+
+    margin: 0px;
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    color: vars.$slate;
+    font-family: vars.$font-sans;
+    font-size: vars.$fz-xl;
+    line-height: 1.3;
 }
 
 ol {
@@ -21,7 +31,243 @@ svg {
     color: vars.$green;
 }
 
+main {
+    width: 100%;
+    padding: 3rem 15rem; // 105px 225px
+
+    @media (max-width: 768px) {
+        padding: 7rem 10rem; // 105px 150px
+    }
+}
+
+section {
+    height: auto;
+    padding: vars.$nav-height;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px 0;
+    font-weight: 600;
+    color: vars.$lightest-slate;
+    line-height: 1.1;
+}
+
 .fng {
+
+    &-intro {
+        &-sup-text {
+            font-family: vars.$font-mono;
+            font-size: clamp(vars.$fz-sm, 5vw, vars.$fz-md);
+            font-weight: 400 !important;
+            color: vars.$green;
+            font-weight: 600;
+            margin: 0px 0px 10px 4px;
+            display: inline-block;
+        }
+
+        &-title-text {
+            font-family: vars.$font-sans;
+            font-size: clamp(40px, 8vw, 70px);
+            color: vars.$lightest-slate;
+            line-height: 1.5;
+            font-weight: 600;
+            margin: 0px;
+        }
+
+        &-sub-text {
+            font-family: vars.$font-sans;
+            margin-top: 5px;
+            color: vars.$slate;
+            line-height: 0.9;
+            font-weight: 600;
+            margin: 0px;
+            font-size: clamp(40px, 8vw, 70px);
+        }
+
+        &-desc-text {
+            margin: 3rem 0;
+            font-family: vars.$font-sans;
+            font-size: vars.$fz-lg;
+            color: vars.$light-slate;
+            max-width: 540px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+    }
+
+    &-about {
+
+        &-numbered-heading {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+            margin: 10px 0px 40px;
+            width: 100%;
+            font-size: clamp(26px, 5vw, vars.$fz-heading);
+            white-space: nowrap;
+
+            &::before {
+                position: relative;
+                bottom: 0px;
+                counter-increment: section 1;
+                content: "0" counter(section) ".";
+                margin-right: 10px;
+                color: vars.$green;
+                font-family: vars.$font-mono;
+                font-size: clamp(vars.$fz-md, 3vw, vars.$fz-xl);
+                font-weight: 400;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: relative;
+                top: -2px;
+                width: 300px;
+                height: 1px;
+                margin-left: 20px;
+                background-color: vars.$lightest-navy;
+            }
+        }
+
+
+        &-inner {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+
+            &-left {
+                p {
+                    margin: 0px 0px 15px;
+                    font-family: vars.$font-sans;
+                    font-size: vars.$fz-lg;
+                }
+
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(2, minmax(140px, 200px));
+                    gap: 0px 10px;
+                    padding: 0px;
+                    margin: 20px 0px 0px;
+                    overflow: hidden;
+                    list-style: none;
+
+                    li {
+                        position: relative;
+                        margin-bottom: 10px;
+                        padding-left: 20px;
+                        font-family: vars.$font-mono;
+                        font-size: vars.$fz-xs;
+
+                        &::before {
+                            content: "▹";
+                            position: absolute;
+                            left: 0px;
+                            color: vars.$green;
+                            font-size: vars.$fz-sm;
+                            line-height: 12px;
+                        }
+                    }
+                }
+            }
+
+            &-right {
+                position: relative;
+                max-width: 300px;
+
+                &-wrapper {
+                    box-shadow: 0 10px 30px -15px vars.$navy-shadow;
+                    transition: vars.$transition;
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    border-radius: vars.$border-radius;
+                    background-color: vars.$green;
+
+
+                    &:hover {
+                        outline: 0px;
+                        transform: translate(-4px, -4px);
+                        box-shadow: 0 20px 30px -15px vars.$navy-shadow;
+
+                        &::before {
+                            transform: translate(2px, 2px);
+                        }
+
+                        &::after {
+                            transform: translate(8px, 8px);
+                        }
+                    }
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: vars.$border-radius;
+                        transition: vars.$transition;
+                        top: 0px;
+                        left: 0px;
+                        background-color: vars.$navy;
+                        mix-blend-mode: screen;
+
+                    }
+
+                    &::after {
+                        content: "";
+                        border: 2px solid vars.$green;
+                        top: 14px;
+                        left: 14px;
+                        z-index: -1;
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: vars.$border-radius;
+                        transition: vars.$transition;
+                    }
+
+
+                    &-img_container {
+                        position: relative;
+                        border-radius: vars.$border-radius;
+                        overflow: hidden;
+                        transition: vars.$transition;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        background-color: vars.$navy;
+
+                        img {
+                            border-radius: vars.$border-radius;
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            filter: grayscale(100%) contrast(1) brightness(90%);
+                            transition: all 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+                            &:hover {
+                                filter: saturate(100%) contrast(1) brightness(100%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
     &-links {
         display: flex;
         align-items: center;
@@ -44,7 +290,7 @@ svg {
         transition: vars.$transition;
         font-size: vars.$fz-xs;
         font-family: vars.$font-mono;
-        font-weight: 500;
+        font-weight: 400;
 
         &:hover,
         &:focus {
@@ -165,5 +411,40 @@ svg {
                 background-color: vars.$light-slate;
             }
         }
+    }
+}
+
+button {
+    .default {
+        color: vars.$green;
+        background-color: transparent;
+        border: 1px solid vars.$green;
+        border-radius: vars.$border-radius;
+        padding: 1.25rem 1.75rem;
+        font-size: vars.$fz-sm;
+        font-family: vars.$font-mono;
+        line-height: 1;
+        text-decoration: none;
+        transition: vars.$transition;
+        margin-top: 50px;
+
+
+        &:hover {
+            outline: none;
+            box-shadow: 3px 3px 0 0 vars.$green;
+            transform: translate(-4px, -4px);
+        }
+    }
+}
+
+.text-highlight {
+    display: inline;
+    position: relative;
+    color: vars.$green;
+    transition: vars.$transition;
+
+    &:hover {
+        color: vars.$green;
+        outline: 0px;
     }
 }
