@@ -23,7 +23,7 @@ $fz-xxs: 12px;
 $fz-xs: 13px;
 $fz-sm: 14px;
 $fz-md: 16px;
-$fz-lg: 18px;
+$fz-lg: 17px;
 $fz-xl: 20px;
 $fz-xxl: 22px;
 $fz-heading: 32px;
@@ -53,5 +53,5 @@ $ham-after-active: bottom 0.1s ease-out, transform 0.22s cubic-bezier(0.215, 0.6
 
 @font-face {
     font-family: 'SF Mono';
-    src: url('/public/assets/sf-mono/SFMono-Regular.otf') format("opentype");
+    src: url('/assets/sf-mono/SFMono-Regular.otf') format("opentype");
 }
