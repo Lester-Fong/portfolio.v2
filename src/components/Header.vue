@@ -2,7 +2,7 @@
   <header class="d-flex align-items-center justify-content-between py-3 px-5">
     <router-link to="/" class="logo">
       <img
-        src="/public/assets/Logo Lester.png"
+        src="/src/assets/Logo-Lester.png"
         alt="Lester Fong Logo"
         width="80"
       />
@@ -21,7 +21,12 @@
         </li>
       </ol>
       <div>
-        <button class="fng-resumeBtn">Resume</button>
+        <a
+          href="/src/assets/lester-fong-resume.pdf"
+          target="_blank"
+          class="fng-resumeBtn"
+          >Resume</a
+        >
       </div>
     </div>
   </header>
