@@ -111,6 +111,8 @@ h6 {
     }
 
     &-about {
+        padding-top: 250px;
+        padding-bottom: 250px;
 
         &-numbered-heading {
             display: flex;
@@ -275,7 +277,7 @@ h6 {
     }
 
     &-works {
-        padding: 0 250px;
+        padding: 100px 250px;
 
         &-numbered-heading {
             display: flex;
@@ -411,6 +413,45 @@ h6 {
                     left: 0px;
                     color: vars.$green;
                 }
+            }
+        }
+    }
+
+    &-projects {
+        padding-top: 250px;
+        padding-bottom: 250px;
+
+        &-numbered-heading {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+            margin: 10px 0px 40px;
+            width: 100%;
+            font-size: clamp(22px, 5vw, vars.$fz-heading);
+            white-space: nowrap;
+
+            &::before {
+                position: relative;
+                bottom: 0px;
+                counter-increment: section 3;
+                content: "0" counter(section) ".";
+                margin-right: 10px;
+                color: vars.$green;
+                font-family: vars.$font-mono;
+                font-size: clamp(vars.$fz-md, 3vw, vars.$fz-xl);
+                font-weight: 400;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                position: relative;
+                top: -2px;
+                width: 300px;
+                height: 1px;
+                margin-left: 20px;
+                background-color: vars.$lightest-navy;
             }
         }
     }
