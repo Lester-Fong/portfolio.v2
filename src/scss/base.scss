@@ -68,7 +68,6 @@ h6 {
 }
 
 .fng {
-
     &-intro {
         &-sup-text {
             font-family: vars.$font-mono;
@@ -111,9 +110,6 @@ h6 {
     }
 
     &-about {
-        padding-top: 250px;
-        padding-bottom: 250px;
-
         &-numbered-heading {
             display: flex;
             -webkit-box-align: center;
@@ -159,6 +155,7 @@ h6 {
                     margin: 0px 0px 15px;
                     font-family: vars.$font-sans;
                     font-size: vars.$fz-lg;
+                    line-height: 1.55;
                 }
 
                 ul {
@@ -277,7 +274,7 @@ h6 {
     }
 
     &-works {
-        padding: 100px 250px;
+        padding: 50px 250px;
 
         &-numbered-heading {
             display: flex;
@@ -418,8 +415,9 @@ h6 {
     }
 
     &-projects {
+        padding: 0;
         padding-top: 250px;
-        padding-bottom: 250px;
+        padding-bottom: 150px;
 
         &-numbered-heading {
             display: flex;
@@ -452,6 +450,160 @@ h6 {
                 height: 1px;
                 margin-left: 20px;
                 background-color: vars.$lightest-navy;
+            }
+        }
+
+        &-content {
+            p {
+                margin: 10px 0px;
+                color: vars.$green;
+                font-family: vars.$font-mono;
+                font-size: vars.$fz-xs;
+                font-weight: 400;
+            }
+
+            &-title {
+                color: vars.$lightest-slate;
+                font-size: clamp(24px, 5vw, 28px);
+                line-height: 1.1;
+                font-weight: 600;
+
+                a {
+                    display: inline-block;
+                    text-decoration: none;
+                    text-decoration-skip-ink: auto;
+                    color: inherit;
+                    transition: vars.$transition;
+                    position: relative;
+                    z-index: 1;
+                }
+            }
+
+            &-description {
+                box-shadow: 0 10px 10px -15px vars.$navy-shadow;
+                transition: vars.$transition;
+                position: relative;
+                z-index: 2;
+                padding: 25px;
+                border-radius: vars.$border-radius;
+                background-color: vars.$light-navy;
+                color: vars.$light-slate;
+                font-size: vars.$fz-lg;
+                text-align: justify;
+
+                &:hover {
+                    box-shadow: 0 20px 30px -15px vars.$navy-shadow;
+                }
+
+                p {
+                    font-family: vars.$font-sans;
+                    color: vars.$light-slate;
+                    font-size: vars.$fz-md;
+                    line-height: 1.35;
+                }
+            }
+
+            &-tech-list {
+                -webkit-box-pack: end;
+                justify-content: flex-end;
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                z-index: 2;
+                margin: 25px 0px 10px;
+                padding: 0px;
+                list-style: none;
+
+                li {
+                    margin: 0px 0px 5px 20px;
+                    color: vars.$light-slate;
+                    font-family: vars.$font-mono;
+                    font-size: vars.$fz-xs;
+                    white-space: nowrap;
+                }
+            }
+
+            &-links {
+                -webkit-box-pack: end;
+                justify-content: flex-end;
+                margin-left: 0px;
+                margin-right: -10px;
+                display: flex;
+                -webkit-box-align: center;
+                align-items: center;
+                position: relative;
+                margin-top: 10px;
+                margin-left: -10px;
+                color: vars.$lightest-slate;
+
+                a {
+                    display: flex;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    padding: 10px;
+                    position: relative;
+                    z-index: 1;
+                    text-decoration: none;
+                    text-decoration-skip-ink: auto;
+                    color: inherit;
+                    transition: vars.$transition;
+                }
+            }
+        }
+    }
+
+    &-noteworthy {
+        display: flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+
+        &-title {
+            visibility: visible;
+            opacity: 1;
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transition: all, opacity 0.5scubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5scubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+            margin: 0px 0px 10px;
+            font-weight: 600;
+            color: vars.$lightest-slate;
+            font-size: clamp(24px, 5vw, vars.$fz-heading);
+            line-height: 1.1;
+        }
+
+        &-archive {
+            visibility: visible;
+            opacity: 1;
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transition: 0.25scubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.5scubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5scubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+            font-family: vars.$font-mono;
+            font-size: vars.$fz-sm;
+            display: inline-block;
+            position: relative;
+            text-decoration: none;
+            color: vars.$green;
+            margin-top: 1rem;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 0px;
+                height: 1px;
+                position: relative;
+                bottom: 0.1em;
+                background-color: vars.$green;
+                opacity: 0.5;
+                transition: vars.$transition;
+            }
+
+            &:hover {
+                color: vars.$green;
+                outline: 0px;
+
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }
@@ -663,5 +815,25 @@ h6 {
 
     &>img {
         scale: 0.3;
+    }
+}
+
+.img-cover {
+    object-fit: cover;
+}
+
+.img-overlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: vars.$light-navy;
+    opacity: 0.65;
+    z-index: 4;
+    transition: vars.$transition;
+
+    &:hover {
+        opacity: .1;
     }
 }
