@@ -39,6 +39,14 @@
 
     <!------------- Projects --------------->
     <Projects />
+
+    <!-- Other Noteworthy Projects -->
+    <div class="fng-noteworthy">
+      <h2 class="fng-noteworthy-title">Other Noteworthy Projects</h2>
+      <a href="javascript:void(0)" class="fng-noteworthy-archive"
+        >view all archives</a
+      >
+    </div>
   </main>
 </template>
 
