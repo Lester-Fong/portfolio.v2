@@ -100,7 +100,7 @@
           <div class="img-overlayer"></div>
           <div class="w-100">
             <img
-              src="/src/assets/happykids.png"
+              src="/src/assets/company.png"
               class="img-cover"
               width="100%"
               height="400"
