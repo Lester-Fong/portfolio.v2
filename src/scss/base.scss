@@ -40,11 +40,47 @@ svg {
 
 main {
     width: 100%;
-    padding: 3rem 15rem; // 105px 225px
+    padding: 3rem 15rem 0; // 105px 225px
 
     @media (max-width: 768px) {
         padding: 7rem 10rem; // 105px 150px
     }
+}
+
+header {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    z-index: 11;
+    padding: 100px 50px;
+    width: 100%;
+    height: vars.$nav-height;
+    background-color: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    transition: vars.$transition;
+    filter: none !important;
+    pointer-events: auto !important;
+    user-select: auto !important;
+
+    @media(prefers-reduced-motion: no-preference) {
+        height: vars.$nav-scroll-height;
+        transform: translateY(0px);
+        background-color: rgba(10, 25, 47, 0.8);
+        box-shadow: 0 10px 30px -10px vars.$navy-shadow;
+    }
+}
+
+.hidden {
+    top: -100px;
+    /* Adjust this value based on your header height */
+}
+
+.box-shadow-none {
+    box-shadow: none !important;
 }
 
 section {
@@ -893,6 +929,98 @@ h6 {
                 background-color: vars.$light-slate;
             }
         }
+    }
+
+    &-contact {
+        visibility: visible;
+        opacity: 1;
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        transition: all, opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s, transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+        max-width: 600px;
+        margin: 0px auto 100px;
+        text-align: center;
+        padding: 100px 0px;
+
+        >h2 {
+            display: block;
+            margin-bottom: 20px;
+            color: vars.$green;
+            font-family: vars.$font-mono;
+            font-size: vars.$fz-md;
+            font-weight: 400;
+            text-align: center;
+
+            -webkit-box-align: center;
+            align-items: center;
+            position: relative;
+            margin: 10px 0px 40px;
+            width: 100%;
+            white-space: nowrap;
+
+            &::before {
+                position: relative;
+                bottom: 0px;
+                counter-increment: section 4;
+                content: "0" counter(section) ".";
+                margin-right: 10px;
+                color: vars.$green;
+                font-family: vars.$font-mono;
+                font-size: clamp(vars.$fz-md, 3vw, vars.$fz-xl);
+                font-weight: 500;
+            }
+        }
+
+        &-title {
+            margin: 0px 0px 20px;
+            font-weight: 600;
+            color: vars.$lightest-slate;
+            line-height: 1.1;
+            font-size: clamp(40px, 5vw, 50px);
+            font-family: vars.$font-sans;
+        }
+
+        >p {
+            font-size: vars.$fz-lg;
+            line-height: 1.65;
+        }
+
+        span {
+            color: vars.$green;
+            font-weight: 600;
+            opacity: .65;
+            transition: vars.$transition;
+
+            &:hover {
+                color: vars.$green;
+                opacity: 1;
+                outline: 0px;
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    min-height: 70px;
+    padding: 15px;
+    text-align: center;
+
+    >a {
+        display: inline-block;
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        color: vars.$green;
+        position: relative;
+        transition: vars.$transition;
+        font-family: vars.$font-mono;
+        font-size: vars.$fz-xxs;
+        line-height: 1.7;
     }
 }
 
