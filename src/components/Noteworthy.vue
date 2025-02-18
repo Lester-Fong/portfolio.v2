@@ -6,9 +6,9 @@
     >
 
     <ul class="fng-noteworthy-grid">
-      <li v-for="i in 6" :key="i">
+      <li v-for="(a, i) in noteworthyProjectList" :key="i">
         <div class="fng-noteworthy-grid-inner">
-          <header class="w-100">
+          <div class="w-100">
             <div class="fng-noteworthy-grid-inner-top">
               <div class="fng-noteworthy-grid-inner-top-folder">
                 <svg
@@ -60,22 +60,18 @@
                 href="https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Sample Project 1</a
+                >{{ a.title }}</a
               >
             </h3>
             <div class="fng-noteworthy-grid-inner-description">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam
-                aut minus distinctio nobis illo cumque suscipit unde similique
-                temporery.
+                {{ a.description }}
               </p>
             </div>
-          </header>
+          </div>
           <footer>
             <ul class="fng-noteworthy-grid-inner-tech-list">
-              <li>Vuejs</li>
-              <li>Laravel</li>
-              <li>Graphql</li>
+              <li v-for="(item, index) in a.techStack">{{ item }}</li>
             </ul>
           </footer>
         </div>
@@ -86,3 +82,53 @@
     </div>
   </div>
 </template>
+
+
+<script setup>
+import { ref } from "vue";
+
+const noteworthyProjectList = ref([
+  {
+    title: "Perya Color Game",
+    description:
+      "A Software Application that is a replica of the popular game Perya Color Game. It is being used by my client which is a wedding host for entertainment purposes.",
+    techStack: ["Electron", "Vanillajs", "HTML", "CSS"],
+    link: "https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c",
+  },
+  {
+    title: "Pocketteams",
+    description:
+      "A Project Management Web Application that is being used by the company exclusively, it helps their team to manage their projects efficiently.",
+    techStack: ["Nodejs", "Expressjs", "MongoDB", "Reactjs"],
+    link: "https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c",
+  },
+  {
+    title: "Flutter Task Listing Mobile App",
+    description:
+      "A Mobile Application for listing task to be done. A simple app that helps me to learn Flutter and Dart.",
+    techStack: ["Dart", "Flutter"],
+    link: "https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c",
+  },
+  {
+    title: "Taylor Swift Random Quotes Generator",
+    description:
+      "A Web Application that generates random quotes from Taylor Swift. It uses an external API to get the quotes and display it to the user.",
+    techStack: ["Expressjs", "Vuejs", "CSS"],
+    link: "https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c",
+  },
+  {
+    title: "Library Management System",
+    description:
+      "Using Vanilla PHP, I created a simple Library Management System that helps the librarian to manage the books and the students to borrow books.",
+    techStack: ["PHP", "MySQL", "HTML", "CSS", "XAMPP"],
+    link: "https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c",
+  },
+  {
+    title: "Pikaloons Game",
+    description:
+      "A simple game that I created using Visual Basic .NET, its a game that is being played by my classmates during our free time.",
+    techStack: ["VB.NET", "WinForms"],
+    link: "https://medium.com/stories-from-upstatement/integrating-algolia-search-with-wordpress-multisite-e2dea3ed449c",
+  },
+]);
+</script>

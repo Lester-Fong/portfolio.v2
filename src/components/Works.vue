@@ -81,15 +81,17 @@
             <div>
               <ul class="ambag-list">
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  dolorem odio aut in assumenda nobis corporis tempora repellat
-                  labore excepturi tempore velit perferendis facere.
+                  Developed a custom Content Management System (CMS) and an
+                  Ecommerce CMS from scratch, that streamline the process of
+                  building and deploying client projects.
                 </li>
                 <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reiciendis alias sapiente perferendis aspernatur fuga tenetur,
-                  iste possimus et tempore temporibus odio ipsam, blanditiis
-                  quis non.
+                  Provide leadership within engineering and coding department
+                  through close collaboration, knowledge shares, and mentorship.
+                </li>
+                <li>
+                  Conducted code reviews and provided constructive feedback to
+                  ensure code quality and adherence to coding standards.
                 </li>
               </ul>
             </div>
@@ -115,15 +117,21 @@
             <div>
               <ul class="ambag-list">
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  dolorem odio aut in assumenda nobis corporis tempora repellat
-                  labore excepturi tempore velit perferendis facere.
+                  Deliver high-quality, robust production code for a diverse
+                  array of projects for clients in various industries at
+                  Australia.
                 </li>
                 <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reiciendis alias sapiente perferendis aspernatur fuga tenetur,
-                  iste possimus et tempore temporibus odio ipsam, blanditiis
-                  quis non.
+                  Created and implemented scalable API endpoints for the
+                  projects of the company.
+                </li>
+                <li>
+                  Optimized application performance on both the server and
+                  client-side.
+                </li>
+                <li>
+                  Communicated with clients to understand their needs and
+                  convert their requirements into technical specifications.
                 </li>
               </ul>
             </div>
@@ -149,15 +157,15 @@
             <div>
               <ul class="ambag-list">
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  dolorem odio aut in assumenda nobis corporis tempora repellat
-                  labore excepturi tempore velit perferendis facere.
+                  Developed a Project Management Web Application to be used by
+                  the company exclusively, it helps their team to manage their
+                  projects efficiently.
                 </li>
                 <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reiciendis alias sapiente perferendis aspernatur fuga tenetur,
-                  iste possimus et tempore temporibus odio ipsam, blanditiis
-                  quis non.
+                  Applied as Associate Software Developer at Pocketdevs in my
+                  Sophomore Year of College. I learned a lot from this
+                  experience and absorbed everything I can learn such as
+                  Teamwork, Agile, Git, Collaboration with Senior Devs and more.
                 </li>
               </ul>
             </div>
@@ -183,15 +191,14 @@
             <div>
               <ul class="ambag-list">
                 <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                  dolorem odio aut in assumenda nobis corporis tempora repellat
-                  labore excepturi tempore velit perferendis facere.
+                  Developed a mobile application for the company which is a
+                  Delivery Management System that helps merchant, drivers, and
+                  customers to manage their deliveries.
                 </li>
                 <li>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Reiciendis alias sapiente perferendis aspernatur fuga tenetur,
-                  iste possimus et tempore temporibus odio ipsam, blanditiis
-                  quis non.
+                  Work alongside CEO, investors to help the research,
+                  development, and architecture of technical solutions to
+                  fulfill business requirements
                 </li>
               </ul>
             </div>
