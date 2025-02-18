@@ -1,5 +1,8 @@
 <template>
-  <header class="d-flex align-items-center justify-content-between py-3 px-5">
+  <header
+    ref="header"
+    class="d-flex align-items-center justify-content-between py-3 px-5"
+  >
     <router-link to="/" class="logo">
       <img
         src="/src/assets/Logo-Lester.png"
@@ -31,3 +34,35 @@
     </div>
   </header>
 </template>
+
+<script setup>
+import { onMounted, onUnmounted, ref } from "vue";
+
+let lastScrollTop = 0;
+const header = ref(null);
+
+const handleScroll = () => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    header.value.classList.add("hidden");
+  } else {
+    header.value.classList.remove("hidden");
+  }
+
+  if (scrollTop <= 0) {
+    header.value.classList.add("box-shadow-none");
+  } else {
+    header.value.classList.remove("box-shadow-none");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+};
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
+</script>
